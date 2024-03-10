@@ -2,8 +2,27 @@
 
 import React, { useEffect, useState } from "react";
 
+interface Post {
+  postId: number;
+  imageType: string;
+  nickname: string;
+  title: string;
+  created: string;
+  category: string;
+  content: string;
+  voteCount: number;
+  option1: string;
+  option2: string;
+  option1Count: number;
+  option2Count: number;
+  comments: string[];
+  commentCount: number;
+  tags: string[];
+  selectedOption: string;
+}
+
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
